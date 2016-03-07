@@ -48,7 +48,7 @@ def scrape_list(url)
       data[:gender] = candidate[:gender]
       data[:age] = candidate[:age]
     end
-    puts data
+    # puts data
     ScraperWiki.save_sqlite([:name, :term], data)
   end
 end
