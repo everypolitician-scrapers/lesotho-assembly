@@ -53,13 +53,5 @@ def scrape_list(url)
   end
 end
 
-term = {
-  id: 9,
-  name: '9th Parliament',
-  start_date: '2015-03-10',
-  source: 'http://www.parliament.ls/assembly/index.php?option=com_content&view=article&id=143:10th-march-2015&catid=61:hansard&Itemid=70',
-}
-ScraperWiki.save_sqlite([:id], term, 'terms')
-
 @candidates = candidates
 scrape_list('http://www.parliament.ls/assembly/index.php?option=com_content&view=article&id=37&Itemid=56')
