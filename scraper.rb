@@ -48,7 +48,7 @@ def scrape_list(url)
       data[:gender] = candidate[:gender]
       data[:age] = candidate[:age]
     end
-    # puts data
+    puts data.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h if ENV['MORPH_DEBUG']
     ScraperWiki.save_sqlite([:name, :term], data)
   end
 end
