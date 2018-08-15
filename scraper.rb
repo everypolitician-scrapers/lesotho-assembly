@@ -39,7 +39,6 @@ def scrape_list(url)
       area: tds[1].text.strip,
       area_id: tds[2].text.strip,
       party: tds[3].text.strip,
-      term: 9,
       source: url,
     }
     next if data[:name].empty?
@@ -49,7 +48,7 @@ def scrape_list(url)
       data[:age] = candidate[:age]
     end
     puts data.reject { |_, v| v.to_s.empty? }.sort_by { |k, _| k }.to_h if ENV['MORPH_DEBUG']
-    ScraperWiki.save_sqlite([:name, :term], data)
+    ScraperWiki.save_sqlite([:name, :area], data)
   end
 end
 
