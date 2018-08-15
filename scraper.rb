@@ -52,5 +52,6 @@ def scrape_list(url)
   end
 end
 
+ScraperWiki.sqliteexecute('DROP TABLE data') rescue nil
 @candidates = candidates
 scrape_list('http://www.parliament.ls/assembly/index.php?option=com_content&view=article&id=37&Itemid=56')
